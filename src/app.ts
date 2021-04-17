@@ -1,7 +1,9 @@
+import { json } from "body-parser";
 import express, { NextFunction, Request, Response } from "express";
 import todoRoutes from "./routes/todos";
 
 const app = express();
+app.use(json());
 
 app.use("/todos", todoRoutes);
 
